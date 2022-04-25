@@ -8,8 +8,9 @@ const PORT = 5500;
 
 app.use(bodyParser.json());
 
-app.use("/people", usersRoutes);
-app.get("/", (req, res) => res.send("Welcome to the Users API!"));
-app.all("*", (req, res) =>res.send("You've tried reaching a route that doesn't exist."));
+app.use('/users' , usersRoutes)
+
+app.get('/', (req, res) => res.send('Hello from Homepage.'))
 
 app.listen(PORT, () => console.log(`Server is running on port: http://localhost:${PORT} `))
+
